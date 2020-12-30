@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-cats2021-dev-25746-authRole",
+            "UnauthRoleArn": "arn:aws:iam::761595046440:role/amplify-cats2021-dev-25746-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::761595046440:role/amplify-cats2021-dev-25746-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-cats2021-dev-25746-deployment",
+            "UnauthRoleName": "amplify-cats2021-dev-25746-unauthRole",
+            "StackName": "amplify-cats2021-dev-25746",
+            "StackId": "arn:aws:cloudformation:eu-west-2:761595046440:stack/amplify-cats2021-dev-25746/a298e4f0-4981-11eb-be31-0a5db39b2b22",
+            "AmplifyAppId": "d3p0wtsxt3xr73"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3p0wtsxt3xr73",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

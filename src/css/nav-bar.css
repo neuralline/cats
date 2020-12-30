@@ -1,0 +1,225 @@
+.nav-bar {
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+  z-index: 100;
+  align-items: center;
+  font-size: 14px;
+}
+
+.nav-bar svg {
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+  cursor: pointer;
+  color: var(--text-color);
+  fill: none;
+  stroke: 5px solid;
+  margin-right: 0.2rem;
+  background-position: center center;
+  background-size: 100%;
+}
+.nav-bar .nav-icon {
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+  cursor: pointer;
+  color: var(--text-color);
+  fill: none;
+  stroke: 5px solid;
+  margin-right: 0.2rem;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.nav-icon.upload {
+  background-image: url('../img/upload.svg');
+}
+.nav-icon.home {
+  background-size: 90%;
+  background-image: url('../img/home.svg');
+}
+.nav-icon.favorites {
+  background-image: url('../img/favorites.svg');
+}
+.nav-icon.votes {
+  background-image: url('../img/votes.svg');
+}
+.nav-icon.camera {
+  background-image: url('../img/camera.svg');
+}
+.nav-bar.logo svg {
+  width: 25px;
+}
+.nav-bar .logo .nav-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.nav-bar .logo {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  font-weight: 500;
+  padding: 0 20px;
+  margin-right: auto;
+  color: var(--text-color);
+}
+
+.nav-bar.active ul {
+  display: none;
+}
+.nav-bar ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em 0;
+}
+.nav-bar a {
+  text-decoration: none;
+  padding-right: 1.5em;
+  position: relative;
+  color: var(--text-color);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+.nav-bar a:hover {
+  color: var(--text-grey);
+}
+
+.nav-bar a::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: var(--text-link);
+  bottom: -6px;
+  transition: var(--transition);
+  border-radius: 10px;
+}
+.nav-bar .active::after {
+  width: 60%;
+}
+
+.nav-bar a:hover::after {
+  width: 60%;
+  background-color: var(--text-color);
+}
+
+.ion-ios-menu {
+  height: 1rem;
+  width: 2.5rem;
+  border-radius: 90%;
+  cursor: pointer;
+  display: none;
+}
+
+.humberger-menu {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.humberger-menu span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: var(--text-link);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+.humberger-menu:hover span {
+  background: var(--text-color);
+}
+
+.humberger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+.humberger-menu span:nth-child(2),
+.humberger-menu span:nth-child(3) {
+  top: 12px;
+}
+
+.humberger-menu span:nth-child(4) {
+  top: 24px;
+}
+
+.humberger-menu.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.humberger-menu.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.humberger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.humberger-menu.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+@media only screen and (max-width: 720px) {
+  .nav-bar ul.active {
+    left: 0;
+  }
+  .ion-ios-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-bar ul {
+    background: var(--foreground);
+    position: absolute;
+    top: 50px;
+    left: -100vw;
+    display: block;
+    width: 100%;
+    height: 45rem;
+    bottom: 0;
+    justify-content: start;
+    align-items: start;
+    margin-top: 0.2rem;
+  }
+  .nav-bar li {
+    padding: var(--main-padding);
+  }
+  .nav-bar .logo {
+    font-size: 18px;
+    align-items: center;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-height: 660px) {
+  .nav-bar li {
+    margin-right: 0;
+  }
+  .nav-bar li:hover {
+    margin-right: 0;
+    margin-bottom: 3em;
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
