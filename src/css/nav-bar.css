@@ -6,6 +6,8 @@
   z-index: 100;
   align-items: center;
   font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(254, 178, 187, 0.4);
 }
 
 .nav-bar svg {
@@ -48,7 +50,7 @@
   background-image: url('../img/votes.svg');
 }
 .nav-icon.camera {
-  background-image: url('../img/camera.svg');
+  background-image: url('../img/favicon.png');
 }
 .nav-bar.logo svg {
   width: 25px;
@@ -65,6 +67,7 @@
   margin-left: 0;
   font-weight: 500;
   padding: 0 20px;
+  padding-left: 0;
   margin-right: auto;
   color: var(--text-color);
 }
@@ -109,6 +112,32 @@
 .nav-bar a:hover::after {
   width: 60%;
   background-color: var(--text-color);
+}
+
+.nav-bar .nav-user {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.nav-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid;
+  overflow: hidden;
+  cursor: pointer;
+  border-color: var(--text-link);
+}
+.nav-user-avatar:hover {
+  border-color: var(--text-color);
+
+  color: var(--text-grey);
+}
+.nav-user-name {
+  color: var(--text-grey);
+  width: 80px;
+  word-wrap: break-word;
 }
 
 .ion-ios-menu {

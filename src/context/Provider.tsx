@@ -1,7 +1,7 @@
-import { createContext, useEffect, useReducer } from 'react'
-import { getCatsImage } from '../functions/fetch-data-from-server'
-import { addFavorite } from '../functions/sort-state-data'
-import { IAction, ICats, IResponse, IState } from '../global-cats-env'
+import {createContext, useEffect, useReducer} from 'react'
+import {getCatsImage} from '../functions/fetch-data-from-server'
+import {addFavorite} from '../functions/sort-state-data'
+import {IAction, ICats, IResponse, IState} from '../global-cats-env'
 
 const initialState: IState = {
   Cats: [],
@@ -9,14 +9,15 @@ const initialState: IState = {
   Votes: [],
   error: false,
   loading: true,
-  message: 'Welcome to CATS GRAM 2021.',
+  message: "Cat's Instagram.",
+  user: {id: '', username: 'player-two', url: '', title: '5Motion Studio'},
   navbar: {
-    logo: { title: 'CATS-GRAM', link: '/', icon: 'camera' },
+    logo: {title: 'CATS', link: '/', icon: 'camera'},
     navList: [
-      { title: 'Home', link: '/', icon: 'home' },
-      { title: 'Favorites', link: '/favorites', icon: 'favorites' },
-      { title: 'Your Votes', link: '/votes', icon: 'votes' },
-      { title: 'Upload', link: '/upload', icon: 'upload' }
+      {title: 'Home', link: '/', icon: 'home'},
+      {title: 'Favorites', link: '/favorites', icon: 'favorites'},
+      {title: 'Your Votes', link: '/votes', icon: 'votes'},
+      {title: 'Upload', link: '/upload', icon: 'upload'}
     ]
   }
 }
@@ -25,18 +26,18 @@ const StoreContext = createContext({})
 const storeReducer = (state: IState, action: IAction): IState => {
   switch (action.type) {
     case 'FETCH_CATS':
-      return { ...state, Cats: [...action.payload] }
+      return {...state, Cats: [...action.payload]}
     case 'FETCH_ALL':
-      return { ...state, ...action.payload }
+      return {...state, ...action.payload}
 
     case 'ADD_NEW_CAT':
-      return { ...state, Cats: [action.payload, ...state.Cats] }
+      return {...state, Cats: [action.payload, ...state.Cats]}
     case 'UPDATE_CAT':
       const foundIndex = state.Cats.findIndex(
         (cat: ICats) => cat.id === action.payload.id
       )
       state.Cats[foundIndex] = action.payload
-      return { ...state, Cats: [...state.Cats] }
+      return {...state, Cats: [...state.Cats]}
 
     case 'ERROR':
       return {
@@ -107,7 +108,7 @@ const StoreProvider: React.FC = (props: any) => {
       return {
         error: true,
         message: 'I only have nine lives',
-        data: { err }
+        data: {err}
       }
       //dispatch({ type: 'ERROR', payload: err.code })
     }
@@ -117,7 +118,7 @@ const StoreProvider: React.FC = (props: any) => {
     connectToTheCatApi()
   }, [])
 
-  return <StoreContext.Provider value={{ ...state, dispatch }} {...props} />
+  return <StoreContext.Provider value={{...state, dispatch}} {...props} />
 }
 
-export { StoreProvider, StoreContext }
+export {StoreProvider, StoreContext}

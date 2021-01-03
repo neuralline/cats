@@ -6,6 +6,14 @@ export interface IState {
   loading: boolean
   message: string
   navbar?: any
+  user?: IUser
+}
+
+export interface IUser {
+  id: string
+  username: string
+  url: string
+  title: string
 }
 export interface IAction {
   type: string
@@ -26,7 +34,7 @@ export interface ICats {
 export interface IVote {
   country_code?: string
   created_at?: string
-  id: 249405
+  id: string
   image_id: string
   sub_id: string
   value: number

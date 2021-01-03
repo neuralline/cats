@@ -1,3 +1,4 @@
+import {API_KEY} from '../config/keys'
 import {IFetch} from '../global-cats-env'
 
 export const getCatsImage = async ({
@@ -7,10 +8,7 @@ export const getCatsImage = async ({
   IncludeHeaders = true
 }: IFetch) => {
   try {
-    const apiKey =
-      process.env.API_KEY ||
-      console.log('Catsgram: Please provide api key') ||
-      ''
+    const apiKey = process.env.API_KEY || API_KEY
 
     if (!url || !method)
       return {
@@ -47,7 +45,7 @@ export const getCatsImage = async ({
     console.log('Cat is down at connect to server api', err)
     return {
       error: true,
-      message: 'Cat encountered error trying to connect to server',
+      message: 'Cat could not connect to server',
       data: []
     }
   }

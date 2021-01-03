@@ -13,6 +13,10 @@ It's all about cats... you can upload your cat image and share, vote, favorite..
 ## Installation
 
 ```sh
+
+git clone https://github.com/neuralline/cats.git
+make sure to include your api key
+
 npm install then npm start
 #or
 yarn install then yarn start

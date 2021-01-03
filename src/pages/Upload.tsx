@@ -1,11 +1,11 @@
-import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { StoreContext } from '../context/Provider'
+import {useContext, useState} from 'react'
+import {Link} from 'react-router-dom'
+import {StoreContext} from '../context/Provider'
 import '../css/cats-app-cards.css'
-import { CatNames } from '../functions/cat-names'
-import { uploadImageToServer } from '../functions/upload-image-to-server'
-import { IResponse } from '../global-cats-env'
-import { uploadIconPath } from '../img/svg-path-elements'
+import {CatNames} from '../functions/cat-names'
+import {uploadImageToServer} from '../functions/upload-image-to-server'
+import {IResponse} from '../global-cats-env'
+import {uploadIconPath} from '../img/svg-path-elements'
 
 interface Dispatch {
   store?: any
@@ -17,8 +17,8 @@ interface Image {
   type: string
 }
 
-const Upload = ({ history }: any) => {
-  const { dispatch }: any = useContext(StoreContext)
+const Upload = ({history}: any) => {
+  const {message, dispatch}: any = useContext(StoreContext)
   const [userSelectedImage, setUserSelectedImage] = useState('')
   const catNewName = CatNames[Math.floor(Math.random() * CatNames.length)]
   const [uploadImageName, setUploadImageName] = useState(catNewName)
@@ -57,9 +57,10 @@ const Upload = ({ history }: any) => {
       )
 
       if (response.error === true) {
+        handleError(response.data)
         return dispatch({
           type: 'ERROR',
-          payload: { ...response }
+          payload: {...response}
         })
       }
 
@@ -86,7 +87,7 @@ const Upload = ({ history }: any) => {
       history.push('/')
     } catch (err) {
       handleError({
-        message: "Cat is down trying to upload another cat's image",
+        message: 'Cat is down trying to upload your photo',
         data: err
       })
       console.log('image upload', err)
@@ -95,14 +96,13 @@ const Upload = ({ history }: any) => {
 
   return (
     <main>
+      <h1>{message}</h1>
       <div className="cat-cards cat-uploader hop shadow transition">
         <svg className="svg hop transition" role="img" viewBox="0 0 640 512">
           <path fill="currentColor" d={uploadIconPath} />
         </svg>
         <div>
-          <br />
           {uploading && <div className="loader"></div>}
-          <br />
           <h3>{status}</h3>
         </div>
         {!userSelectedImage ? (

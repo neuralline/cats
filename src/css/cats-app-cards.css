@@ -146,6 +146,7 @@ cats-app cards interactive unit
   flex-direction: column;
   max-width: 26rem;
   max-height: 26rem;
+  border-radius: 50%;
   background-color: var(--text-light);
   border: 6px dotted var(--text-link);
   margin-bottom: 2rem;

@@ -1,19 +1,20 @@
-import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import {useContext} from 'react'
+import {Link} from 'react-router-dom'
 import ImageCard from '../components/ImageCard'
-import { StoreContext } from '../context/Provider'
+import {StoreContext} from '../context/Provider'
 import '../css/cats-app-cards.css'
-import { ICats } from '../global-cats-env'
+import {ICats} from '../global-cats-env'
 
 const VoteList = () => {
-  const { Cats }: any = useContext(StoreContext)
+  const {Cats, message}: any = useContext(StoreContext)
   const votedUpList = Cats.filter((cat: ICats) => cat.id && cat.value === 2)
   const votedDownList = Cats.filter((cat: ICats) => cat.value === 1)
 
   //list of favorite cats image [does not auto update ]
   return (
     <main>
-      <h2>Voted Up Cats</h2>
+      <h1>{message}</h1>
+      <h2>Voted up cats</h2>
       <ul className="cats-list">
         {votedUpList.map((Cat: ICats, index: number) => (
           <li key={index}>
@@ -23,7 +24,7 @@ const VoteList = () => {
           </li>
         ))}
       </ul>
-      <h2>Voted Down Cats</h2>
+      <h2>Voted down cats</h2>
       <ul className="cats-list">
         {votedDownList.map((Cat: ICats, index: number) => (
           <li key={index}>

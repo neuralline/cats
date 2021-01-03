@@ -11,7 +11,7 @@ const InteractiveCardElements = ({
   handleVote,
   handleDelete
 }: any) => {
-  const isDeleteEnabled = false
+  const isDeleteEnabled = true
   return (
     <div className="cats-interactive-elements">
       <div className="card-foreground-cover transition">
@@ -27,8 +27,7 @@ const InteractiveCardElements = ({
               onClick={e => handleDelete(e, image.id)}
               className={`cat-favorite-icon btn up hop transition`}
               viewBox="0 0 512.001 512.001"
-              role="img"
-            >
+              role="img">
               <title>Delete photo</title>
               <path fill="currentColor" d={deleteIconPath} />
             </svg>
@@ -41,8 +40,7 @@ const InteractiveCardElements = ({
         <svg
           onClick={e => handleVote(e, 2)}
           className={`up hop transition ${image.value === 2 && 'active'}`}
-          viewBox="0 0 512 512"
-        >
+          viewBox="0 0 512 512">
           <title>Vote this photo up</title>
           <path fill="currentColor" d={arrowPath} />
         </svg>
@@ -52,16 +50,14 @@ const InteractiveCardElements = ({
           aria-hidden="false"
           focusable="false"
           role="img"
-          viewBox="0 0 391.837 391.837"
-        >
+          viewBox="0 0 391.837 391.837">
           <title>Favorite this photo</title>
           <path fill="currentColor" d={favoriteIconPath} />
         </svg>
         <svg
           onClick={e => handleVote(e, 1)}
           className={`down hop transition ${image.value === 1 && 'active'}`}
-          viewBox="0 0 512 512"
-        >
+          viewBox="0 0 512 512">
           <title>Vote this photo down</title>
           <path fill="currentColor" d={arrowPath} />
         </svg>
