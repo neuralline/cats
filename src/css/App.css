@@ -222,5 +222,6 @@ p {
   }
   .container {
     margin: 8px auto;
+    min-height: 95vh;
   }
 }

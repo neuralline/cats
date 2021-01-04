@@ -246,9 +246,4 @@
   .nav-bar li {
     margin-right: 0;
   }
-  .nav-bar li:hover {
-    margin-right: 0;
-    margin-bottom: 3em;
-    background: rgba(0, 0, 0, 0.9);
-  }
 }
