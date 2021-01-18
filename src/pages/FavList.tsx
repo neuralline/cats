@@ -17,7 +17,7 @@ const FavList = () => {
       <ul className="cats-list">
         {filterFavoriteCats.length ? (
           filterFavoriteCats.map((Cat: ICats, index: number) => (
-            <li className="hop transition" key={index}>
+            <li key={index}>
               <Link to={`/post/${Cat.id}`}>
                 <ImageCard image={Cat} />
               </Link>

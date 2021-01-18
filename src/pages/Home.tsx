@@ -11,12 +11,12 @@ const Home = () => {
   //console.log('Cats from Home', Cats)
   //list all cat images [cat]
   return (
-    <main className="main">
+    <main className="main" data-testid="home">
       <h1>{message}</h1>
       <ul className="cats-list">
         {Cats.length ? (
           Cats.map((image: ICats, index: number) => (
-            <li key={index} className="hop transition">
+            <li key={index}>
               <Link to={`/post/${image.id}`}>
                 <ImageCard image={image} />
               </Link>

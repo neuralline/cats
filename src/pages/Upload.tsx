@@ -113,6 +113,7 @@ const Upload = ({history}: any) => {
               className="custom-file-input"
               onChange={handleChange}
               title="Click here to select your cat Photo"
+              data-testid="select-upload-image"
             />
             <i>click here</i>
           </>
@@ -121,6 +122,7 @@ const Upload = ({history}: any) => {
             <input
               type="text"
               name="cat-name"
+              data-testid="select-cat-name"
               className="main-input shadow transition"
               placeholder={uploadImageName}
               onChange={e => {
@@ -135,7 +137,9 @@ const Upload = ({history}: any) => {
         )}
       </div>
       <Link to="/">
-        <button className="btn shadow transition">Back.</button>
+        <button className="btn shadow transition" data-testid="submit-upload">
+          Back.
+        </button>
       </Link>
     </main>
   )

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Loading from './components/Loading'
 import NavBar from './components/NavBar'
 import './css/App.css'
@@ -11,7 +11,7 @@ import VoteList from './pages/VoteList'
 function App() {
   return (
     <Router>
-      <div className="container shadow transition">
+      <section className="container shadow transition">
         <Route component={NavBar} />
         <Switch>
           <Route path="/" exact component={Home} />
@@ -23,11 +23,11 @@ function App() {
         </Switch>
         <footer>
           <div>
-            By <i className="hop transition">Darik. </i>
+            <i className="hop transition">Dariks. </i>
             @github/neuralline/cats
           </div>
         </footer>
-      </div>
+      </section>
     </Router>
   )
 }

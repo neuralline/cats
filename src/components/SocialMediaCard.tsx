@@ -1,7 +1,3 @@
-import logo from '../img/logo.png'
-
-import {Redirect} from 'react-router-dom'
-
 const SocialMediaCard = () => {
   const tweet = 'instagram for cats'
   const url = 'https://dev.d3p0wtsxt3xr73.amplifyapp.com/'

@@ -5,7 +5,6 @@ import '../css/nav-bar.css'
 import {IMenu} from '../global-cats-env'
 import avatar from '../img/avatar-0.jpg'
 import Hamburger from './Hamburger'
-import logoImage from '../img/favicon.png'
 
 const NavBar = ({location}: any) => {
   const {navbar}: any = useContext(StoreContext)
@@ -13,7 +12,7 @@ const NavBar = ({location}: any) => {
   const navList: [IMenu] = navbar.navList
 
   return (
-    <nav className="nav-bar transition">
+    <nav className="nav-bar transition" data-test="nav-bar">
       <Link
         to={navbar.logo.link}
         className={`logo transition ${

@@ -27,8 +27,9 @@
         window.addEventListener('load', () => {
           navigator.serviceWorker
             .register('./neural-line.js')
-            .then(ref => console.log('Succuss: ', ref))
-            .catch(err => console.log('Failure: ', err))
+            .catch(err =>
+              console.log('Neural Line: Off line mode is not available')
+            )
         })
       }
     </script>

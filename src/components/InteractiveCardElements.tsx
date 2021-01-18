@@ -11,7 +11,7 @@ const InteractiveCardElements = ({
   handleVote,
   handleDelete
 }: any) => {
-  const isDeleteEnabled = true
+  const isDeleteEnabled = false
   return (
     <div className="cats-interactive-elements">
       <div className="card-foreground-cover transition">

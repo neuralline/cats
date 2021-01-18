@@ -1,15 +1,15 @@
-import { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import {useContext} from 'react'
+import {Link, useParams} from 'react-router-dom'
 import ImageCard from '../components/ImageCard'
 import Loading from '../components/Loading'
 import SocialMediaCard from '../components/SocialMediaCard'
-import { StoreContext } from '../context/Provider'
-import { ICats } from '../global-cats-env'
+import {StoreContext} from '../context/Provider'
+import {ICats} from '../global-cats-env'
 
-const Post = ({ location }: any) => {
-  const { id }: any = useParams()
-  const { Cats, message }: any = useContext(StoreContext)
-  const catPost: ICats = Cats.filter((cat: ICats) => cat.id === id)[0]
+const Post: React.FC = () => {
+  const {id}: {id: string} = useParams()
+  const {Cats, message}: any = useContext(StoreContext)
+  const catPost: ICats = Cats.find((cat: ICats) => cat.id === id)
   return (
     <>
       <main>
