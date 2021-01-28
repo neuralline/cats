@@ -34,7 +34,7 @@ const InteractiveCardElements = ({
           )}
         </div>
 
-        <div className="score hop transition">{image.value}</div>
+        {/* <div className="score hop transition">{image.value}</div> */}
       </div>
       <div className="interactive-icons">
         <svg

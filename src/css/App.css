@@ -7,7 +7,7 @@
   --text-color: #ec6ba3;
   --text-grey: #8494a0;
   --text-link: #f0a6c9;
-  --background: #e9e8eb;
+  --background: var(--text-light);
   --foreground: #ffffff;
   --bg-container: var(--text-link);
   --transition: width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), height 0.2s ease;
