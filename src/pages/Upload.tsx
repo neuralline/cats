@@ -97,7 +97,7 @@ const Upload = ({history}: any) => {
   return (
     <main>
       <h1>{message}</h1>
-      <div className="cat-cards cat-uploader hop shadow transition">
+      <div className="cat-cards cat-uploader shadow transition">
         <svg className="svg hop transition" role="img" viewBox="0 0 640 512">
           <path fill="currentColor" d={uploadIconPath} />
         </svg>

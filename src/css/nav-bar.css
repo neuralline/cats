@@ -91,7 +91,7 @@
   align-items: center;
 }
 .nav-bar a:hover {
-  color: var(--text-grey);
+  color: var(--text-link);
 }
 
 .nav-bar a::after {
