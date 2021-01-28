@@ -7,16 +7,6 @@ import {uploadImageToServer} from '../functions/upload-image-to-server'
 import {IResponse} from '../global-cats-env'
 import {uploadIconPath} from '../img/svg-path-elements'
 
-interface Dispatch {
-  store?: any
-  dispatch?: any
-}
-
-interface Image {
-  name: string
-  type: string
-}
-
 const Upload = ({history}: any) => {
   const {message, dispatch}: any = useContext(StoreContext)
   const [userSelectedImage, setUserSelectedImage] = useState('')

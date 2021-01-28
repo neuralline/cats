@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { StoreContext } from '../context/Provider'
 import { handleDeleteImageOnServer } from '../functions/deleteStation'
 import { handleFavorOnServer } from '../functions/favorStation'
 import { handleVoteOnServer } from '../functions/voteStation'
-import { IResponse } from '../global-cats-env'
+import { ICats, IResponse } from '../global-cats-env'
 import InteractiveCardElements from './InteractiveCardElements'
 
-const ImageCard = ({ image }: any) => {
-  const { dispatch }: any = useContext(StoreContext)
+const ImageCard: FC<{image: ICats}> = ({image}) => {
+  const {dispatch}: any = useContext(StoreContext)
   const [loadingInProgress, setLoadingInProgress] = useState(false)
 
   /***
@@ -22,19 +22,19 @@ const ImageCard = ({ image }: any) => {
     setLoadingInProgress(true)
     //update store
 
-    const response: IResponse = await handleVoteOnServer(value, { ...image })
+    const response: IResponse = await handleVoteOnServer(value, {...image})
     if (response.error) {
       return dispatch({
         type: 'ERROR',
-        payload: { ...response }
+        payload: {...response}
       })
     }
 
     dispatch({
       type: 'UPDATE_CAT',
       payload: response.data.id
-        ? { ...image, vote_id: response.data.id, value: value }
-        : { ...image, value: 0 }
+        ? {...image, vote_id: response.data.id, value: value}
+        : {...image, value: 0}
     })
 
     setLoadingInProgress(false)
@@ -49,7 +49,7 @@ const ImageCard = ({ image }: any) => {
     e.preventDefault()
     if (loadingInProgress) return
     setLoadingInProgress(true)
-    const response: IResponse = await handleFavorOnServer({ ...image })
+    const response: IResponse = await handleFavorOnServer({...image})
     //update store
     if (response.message !== 'SUCCESS') {
       return dispatch({
@@ -67,7 +67,7 @@ const ImageCard = ({ image }: any) => {
             ...image,
             favorite: false
           }
-        : { ...image, fav_id: response.data.id || 0, favorite: true }
+        : {...image, fav_id: response.data.id || 0, favorite: true}
     })
 
     setLoadingInProgress(false)
@@ -82,7 +82,7 @@ const ImageCard = ({ image }: any) => {
     e.preventDefault()
     if (loadingInProgress) return
     setLoadingInProgress(true)
-    const response = await handleDeleteImageOnServer({ ...image })
+    const response = await handleDeleteImageOnServer({...image})
     console.log('handleDeleteImageOnServer ', response)
 
     setLoadingInProgress(false)
@@ -98,8 +98,7 @@ const ImageCard = ({ image }: any) => {
         title={image.original_filename}
         style={{
           backgroundImage: `url("${image.url}`
-        }}
-      >
+        }}>
         <InteractiveCardElements
           image={image}
           loadingInProgress={loadingInProgress}

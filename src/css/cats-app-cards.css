@@ -24,7 +24,7 @@
   height: 100%;
   overflow: hidden;
   background-size: 40%;
-  background-color: var(--text-grey);
+  background-color: var(--text-light);
   color: var(--text-color);
   background-image: url('../img/cat-track.svg');
   background-position: center center;
@@ -150,6 +150,7 @@ cats-app cards interactive unit
   background-color: var(--text-light);
   border: 6px dotted var(--text-link);
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .cat-uploader input[type='file'] {
